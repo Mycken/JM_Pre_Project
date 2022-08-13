@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update User</title>
+</head>
+
+<body>
+<form action="#" th:action="@{/admin/user-update}" th:object="${user}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+    <br/>
+    <label for="firstName">First Name</label>
+    <input type="text" th:field="*{firstName}" id="firstName" placeholder="First Name">
+    <br/>
+    <label for="lastName">Last Name</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last name">
+    <br/>
+    <label for="email">Email</label>
+    <input type="text" th:field="*{email}" id="email" placeholder="Email">
+    <br/>
+    <label for="username">UserName</label>
+    <input type="text" th:field="*{username}" id="username" placeholder="UserName">
+    <br/>
+    <label for="password">Password</label>
+    <input readonly type="text" th:field="*{password}" id="password">
+    <br>
+    <br>
+
+    <table>
+        <thead>
+            <th>Existing user's role:</th>
+
+        </thead>
+<!--        <p th:text="${user.getAuthorities()}"/>-->
+        <tr th:each="ra : ${userservice.getIdRoleByIdUser(user.getId())}">
+            <td th:text="${ra}"></td>
+        </tr>
+
+    </table>
+    <br>
+    <th>Add role:</th>
+<!--    <label for="rolesNew"></label>-->
+        <select id="rolesNew" name="rolesNew"  required
+                class="form-control form-control-sm" >
+            <option>-</option>
+            <option th:each="r: ${userservice.getAllRoles()}"
+                    th:value="${r}" th:utext="${r}">
+            </option>
+        </select>
+    <th>Delete role:</th>
+    <select id="rolesDelete" name="rolesDelete"  required
+            class="form-control form-control-sm" >
+        <option>-</option>
+        <option th:each="r: ${userservice.getAllRoles()}"
+                th:value="${r}" th:utext="${r}">
+        </option>
+    </select>
+    <br>
+
+    <br>
+
+    <input type="submit" value="Update User">
+    <br/>
+</form>
+
+<a href="javascript: document.logoutForm.submit()" role="menuitem"> Logout</a>
+
+<form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
+    <input hidden type="submit" value="Sign Out"/>
+</form>
+</body>
+</html>

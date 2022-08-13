@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:security="http://www.w3.org/1999/xhtml">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+
+        <h1>HELLO</h1>
+
+        <p><a th:href="@{/admin/user-create}">Create User</a> </p>
+
+        <p><a th:href="@{/admin/users}">List of User</a> </p>
+
+
+
+    <div security:authorize access = "hasRole('ADMIN')">ADMIN</div>
+    <!--        <li sec:authorize="hasAnyRole('ADMIN', 'USER')">Entry 2</li>-->
+    <div security:authorize access = "hasRole('USER')">USER</div>
+</div>
+
+<a href="javascript: document.logoutForm.submit()" role="menuitem"> Logout</a>
+<form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
+    <input hidden type="submit" value="Sign Out"/>
+</form>
+
+</body>
+</html>

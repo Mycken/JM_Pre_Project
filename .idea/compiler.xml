@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-types-of-wiring" />
+        <module name="spring-hibernate" />
+        <module name="web_app2.3.1" />
+        <module name="2.4.2" />
+        <module name="2.1.3" />
+        <module name="3.1.1" />
+        <module name="3.1.2" />
+        <module name="2.1.2" />
+        <module name="2.4.2_final" />
+        <module name="3.1.3" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="2.1.2" target="1.8" />
+      <module name="2.1.3" target="1.8" />
+      <module name="2.4.2" target="14" />
+      <module name="2.4.2_final" target="14" />
+      <module name="3.1.1" target="11" />
+      <module name="3.1.2" target="11" />
+      <module name="3.1.3" target="11" />
+      <module name="spring-hibernate" target="1.8" />
+      <module name="spring-types-of-wiring" target="1.8" />
+      <module name="web_app2.3.1" target="14" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="3.1.1" options="-parameters" />
+      <module name="3.1.2" options="-parameters" />
+      <module name="3.1.3" options="-parameters" />
+    </option>
+  </component>
+</project>

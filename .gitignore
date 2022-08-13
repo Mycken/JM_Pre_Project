@@ -1,0 +1,5 @@
+# Project exclude paths
+/2.1.2/target/
+/2.1.4/spring-types-of-wiring/target/
+/2.2.1/2.2.1. spring_hibernate/target/
+/2.3.1/web_app2.3.1Entity/target/
